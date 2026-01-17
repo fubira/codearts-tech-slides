@@ -5,9 +5,9 @@
   "description": "Lightning Talk slides for tech presentations",
   "scripts": {
     "preview": "marp --preview slides/",
-    "build": "marp --output dist/ slides/",
-    "build:pdf": "marp --pdf --output dist/ slides/",
-    "build:pptx": "marp --pptx --output dist/ slides/",
+    "build": "marp --input-dir slides/ --output dist/",
+    "build:pdf": "marp --pdf --input-dir slides/ --output dist/",
+    "build:pptx": "marp --pptx --input-dir slides/ --output dist/",
     "watch": "marp --watch slides/"
   },
   "devDependencies": {
