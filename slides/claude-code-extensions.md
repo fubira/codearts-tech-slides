@@ -30,15 +30,16 @@ paginate: true
 
 # MCP とは
 
-AIが**外部の情報やサービス**にアクセスするためのインターフェース
+LLMが**外部の情報やサービス**にアクセスするためのインターフェース
 
-様々なサービスがMCP対応し、一時期流行った
+Anthropicが開発、標準化を進めておりChatGPTもサポート
 
 ---
 
 # MCP の課題
 
 1. **インストールが手間**
+   - docker/npx/uvx等でサーバーを起動
    - 設定ファイルを書いて接続
    - 環境ごとに再設定が必要
 
@@ -66,7 +67,7 @@ AIが**外部の情報やサービス**にアクセスするためのインタ�
 
 # Skills とは
 
-`~/.claude/skills/` 内のmdファイルを
+`SKILL.md` ファイルで定義した専門知識を
 **必要な時だけ**読み込んで動作
 
 → 専門家として振る舞わせる仕組み
@@ -100,30 +101,30 @@ AIが**外部の情報やサービス**にアクセスするためのインタ�
 
 # Plugins とは
 
-**公開された拡張機能**を取り込む仕組み
+**マーケットプレイスで配布**される拡張機能
 
-Skillsは自作、Pluginsは公開されたものを利用
+Skillsは個人/チーム向け、Pluginsは広く公開向け
 
 ---
 
 # Plugins の使い方
 
-`/plugin` コマンドでマーケットプレイスから導入
+`/plugins` コマンドでマーケットプレイスから導入
 
 ```
-/plugin
+/plugins
 ```
 
 公式リポジトリ:
-github.com/anthropics/claude-code/tree/main/plugins
+[github.com/anthropics/claude-code](https://github.com/anthropics/claude-code/tree/main/plugins)
 
 ---
 
-# おすすめ: frontend-plugin
+# おすすめ: frontend-design
 
 デフォルトのClaude Codeは**味気ないUI**を作りがち
 
-frontend-pluginを通すと
+frontend-designを通すと
 **リッチなデザイン**を自動で生成
 
 ---
@@ -136,9 +137,9 @@ frontend-pluginを通すと
 
 # 3つの拡張機能
 
-| 種類 | 特徴 | 用途 |
-|------|------|------|
-| **MCP** | 外部連携 | 最小限で運用 |
-| **Skills** | 自作 | 定型作業の標準化 |
-| **Plugins** | 公開 | 便利機能の導入 |
+| | 用途 | 導入方法 |
+|---|------|---------|
+| **MCP** | 外部と連携 | サーバー起動+設定 |
+| **Skills** | 専門知識を定義 | 自作/チーム共有 |
+| **Plugins** | 動作の拡張 | マーケットプレイス |
 

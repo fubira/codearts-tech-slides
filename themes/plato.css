@@ -213,8 +213,8 @@ section blockquote strong {
 /* ==================== TABLES ==================== */
 
 section table {
-  width: 100%;
-  margin: var(--space-lg) 0;
+  width: auto;
+  margin: var(--space-lg) auto;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.85em;
