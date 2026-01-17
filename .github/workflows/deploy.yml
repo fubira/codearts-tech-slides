@@ -30,36 +30,10 @@ jobs:
       - name: Build slides
         run: bun run build
 
-      - name: Copy assets to dist
-        run: cp -r assets dist/ 2>/dev/null || true
-
-      - name: Create index.html
+      - name: Copy static files to dist
         run: |
-          cat > dist/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="ja">
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>codearts-tech-slides</title>
-            <style>
-              body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-              h1 { border-bottom: 2px solid #c2410c; padding-bottom: 0.5rem; }
-              ul { list-style: none; padding: 0; }
-              li { margin: 1rem 0; }
-              a { color: #c2410c; text-decoration: none; font-size: 1.2rem; }
-              a:hover { text-decoration: underline; }
-            </style>
-          </head>
-          <body>
-            <h1>codearts-tech-slides</h1>
-            <ul>
-              <li><a href="claude-md-intro.html">Claude Code チューンナップ入門</a></li>
-              <li><a href="sample.html">Marp Sample Slide</a></li>
-            </ul>
-          </body>
-          </html>
-          EOF
+          cp -r assets dist/ 2>/dev/null || true
+          cp public/index.html dist/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>codearts-tech-slides</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --plato-terracotta: #c2410c;
+      --plato-terracotta-light: #ea580c;
+      --plato-cream: #fef7ed;
+      --plato-cream-dark: #fef3e2;
+      --plato-charcoal: #292524;
+      --plato-stone: #57534e;
+      --plato-stone-light: #78716c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', system-ui, sans-serif;
+      background: linear-gradient(160deg, var(--plato-cream) 0%, var(--plato-cream-dark) 100%);
+      min-height: 100vh;
+      color: var(--plato-charcoal);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    header {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--plato-charcoal);
+      border-bottom: 4px solid var(--plato-terracotta);
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--plato-stone);
+      font-size: 1rem;
+    }
+
+    .slides-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .slide-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(41, 37, 36, 0.08);
+      transition: all 0.2s ease;
+      border: 1px solid rgba(41, 37, 36, 0.06);
+    }
+
+    .slide-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(41, 37, 36, 0.12);
+      border-color: var(--plato-terracotta);
+    }
+
+    .slide-card a {
+      text-decoration: none;
+      display: block;
+    }
+
+    .slide-title {
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--plato-charcoal);
+      margin-bottom: 0.25rem;
+    }
+
+    .slide-card:hover .slide-title {
+      color: var(--plato-terracotta);
+    }
+
+    .slide-description {
+      font-size: 0.875rem;
+      color: var(--plato-stone-light);
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(41, 37, 36, 0.1);
+      text-align: center;
+      color: var(--plato-stone-light);
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: var(--plato-terracotta);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>codearts-tech-slides</h1>
+      <p class="subtitle">Lightning Talk slides for tech presentations</p>
+    </header>
+
+    <ul class="slides-list">
+      <li class="slide-card">
+        <a href="claude-md-intro.html">
+          <div class="slide-title">Claude Code チューンナップ入門</div>
+          <div class="slide-description">CLAUDE.md 事始め</div>
+        </a>
+      </li>
+      <li class="slide-card">
+        <a href="sample.html">
+          <div class="slide-title">Marp Sample Slide</div>
+          <div class="slide-description">Lightning Talk Template</div>
+        </a>
+      </li>
+    </ul>
+
+    <footer>
+      <p>Built with <a href="https://marp.app/" target="_blank" rel="noopener">Marp</a></p>
+    </footer>
+  </div>
+</body>
+</html>
