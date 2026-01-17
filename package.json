@@ -1,0 +1,16 @@
+{
+  "name": "codearts-tech-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightning Talk slides and tech documents",
+  "scripts": {
+    "preview": "marp --preview slides/",
+    "build": "marp --output dist/ slides/",
+    "build:pdf": "marp --pdf --output dist/ slides/",
+    "build:pptx": "marp --pptx --output dist/ slides/",
+    "watch": "marp --watch slides/"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.0.3"
+  }
+}
