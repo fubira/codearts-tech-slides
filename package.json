@@ -1,8 +1,8 @@
 {
-  "name": "codearts-tech-docs",
+  "name": "codearts-tech-slides",
   "version": "1.0.0",
   "private": true,
-  "description": "Lightning Talk slides and tech documents",
+  "description": "Lightning Talk slides for tech presentations",
   "scripts": {
     "preview": "marp --preview slides/",
     "build": "marp --output dist/ slides/",
