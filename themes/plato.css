@@ -575,3 +575,41 @@ section.compact li {
 .mb-md { margin-bottom: var(--space-md); }
 .mt-lg { margin-top: var(--space-lg); }
 .mb-lg { margin-bottom: var(--space-lg); }
+
+/* ==================== SYNTAX HIGHLIGHTING ==================== */
+
+/* Override default highlight.js colors for better readability */
+pre code .hljs-tag,
+pre code .hljs-name {
+  color: #f97316;  /* Orange for tags */
+}
+
+pre code .hljs-attr {
+  color: #a5d6ff;  /* Light blue for attributes */
+}
+
+pre code .hljs-string {
+  color: #7ee787;  /* Green for strings */
+}
+
+pre code .hljs-comment {
+  color: #8b949e;  /* Gray for comments */
+}
+
+pre code .hljs-keyword {
+  color: #ff7b72;  /* Red for keywords */
+}
+
+pre code .hljs-function,
+pre code .hljs-title {
+  color: #d2a8ff;  /* Purple for functions */
+}
+
+pre code .hljs-variable,
+pre code .hljs-property {
+  color: #ffa657;  /* Orange for variables */
+}
+
+pre code .hljs-number {
+  color: #79c0ff;  /* Blue for numbers */
+}

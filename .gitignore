@@ -5,3 +5,6 @@ dist/
 
 # Build artifacts
 slides/*.html
+
+# Claude Code temp files
+tmpclaude-*-cwd
