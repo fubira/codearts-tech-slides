@@ -30,6 +30,20 @@ body {
   color: var(--slate-ivory);
 }
 
+a {
+  color: var(--slate-champagne);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--slate-champagne-soft);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--slate-champagne);
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -80,6 +94,7 @@ h1 {
 
 .slide-card a {
   text-decoration: none;
+  color: inherit;
 }
 
 .slide-card a::after {
@@ -94,7 +109,7 @@ h1 {
   font-size: 1.25rem;
   font-weight: 500;
   color: var(--slate-ivory);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .slide-card:hover .slide-title {
@@ -104,19 +119,21 @@ h1 {
 .slide-meta {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   gap: 1rem;
 }
 
 .slide-description {
   font-size: 0.875rem;
   color: var(--slate-silver-light);
+  flex: 1;
 }
 
 .slide-date {
   font-size: 0.75rem;
-  color: var(--slate-silver);
+  color: var(--slate-silver-light);
   white-space: nowrap;
+  text-align: right;
 }
 
 footer {
