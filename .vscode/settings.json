@@ -2,7 +2,6 @@
   "markdown.marp.enableHtml": true,
   "markdown.marp.themes": [
     "./themes/plato.css",
-    "./themes/dusk.css",
     "./themes/slate.css"
   ]
 }

@@ -1,5 +1,4 @@
 html: true
 themeSet:
   - themes/plato.css
-  - themes/dusk.css
   - themes/slate.css

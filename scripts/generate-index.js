@@ -7,10 +7,37 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const SLIDES_DIR = path.join(__dirname, '..', 'slides');
 const TEMPLATE_DIR = path.join(__dirname, '..', 'templates');
 const OUTPUT_DIR = path.join(__dirname, '..', 'dist');
+
+/**
+ * Gitから最終更新日を取得
+ */
+function getLastModified(filePath) {
+  try {
+    const result = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
+      encoding: 'utf-8',
+      cwd: path.dirname(filePath),
+    }).trim();
+    return result ? new Date(result) : fs.statSync(filePath).mtime;
+  } catch {
+    // Gitが使えない場合はファイルの更新日時を使用
+    return fs.statSync(filePath).mtime;
+  }
+}
+
+/**
+ * 日付を YYYY/MM/DD 形式でフォーマット
+ */
+function formatDate(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}/${m}/${d}`;
+}
 
 /**
  * Markdownファイルからタイトルと説明を抽出
@@ -18,6 +45,7 @@ const OUTPUT_DIR = path.join(__dirname, '..', 'dist');
 function extractSlideInfo(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8');
   const fileName = path.basename(filePath, '.md');
+  const lastModified = getLastModified(filePath);
 
   // タイトルページの # から始まる行を探す
   const lines = content.split('\n');
@@ -49,6 +77,8 @@ function extractSlideInfo(filePath) {
     fileName,
     title,
     description,
+    lastModified,
+    lastModifiedFormatted: formatDate(lastModified),
   };
 }
 
@@ -59,7 +89,10 @@ function generateSlideCard(slide) {
   return `      <li class="slide-card">
         <a href="${slide.fileName}.html">
           <div class="slide-title">${slide.title}</div>
-          <div class="slide-description">${slide.description}</div>
+          <div class="slide-meta">
+            <span class="slide-description">${slide.description}</span>
+            <span class="slide-date">${slide.lastModifiedFormatted}</span>
+          </div>
         </a>
       </li>`;
 }
@@ -82,8 +115,10 @@ function main() {
     process.exit(1);
   }
 
-  // 各ファイルから情報を抽出
-  const slides = mdFiles.map(extractSlideInfo);
+  // 各ファイルから情報を抽出し、更新日時の降順でソート
+  const slides = mdFiles
+    .map(extractSlideInfo)
+    .sort((a, b) => b.lastModified - a.lastModified);
 
   // テンプレートを読み込み
   const templatePath = path.join(TEMPLATE_DIR, 'index.html');
