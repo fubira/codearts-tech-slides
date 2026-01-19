@@ -168,10 +168,11 @@ code {
 pre {
   background: var(--plato-charcoal);
   border-radius: var(--radius-md);
-  padding: var(--space-md);
-  margin: var(--space-md) 0;
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-sm) 0;
   overflow-x: auto;
   box-shadow: var(--shadow-medium);
+  max-height: 280px;
 }
 
 pre code {
@@ -179,8 +180,8 @@ pre code {
   border: none;
   color: var(--plato-cream);
   padding: 0;
-  font-size: 0.8em;
-  line-height: 1.6;
+  font-size: 0.7em;
+  line-height: 1.5;
 }
 
 /* ==================== BLOCKQUOTE ==================== */
