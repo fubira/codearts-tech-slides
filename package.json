@@ -8,7 +8,8 @@
     "build": "marp --input-dir slides/ --output dist/ && node scripts/generate-index.js",
     "build:pdf": "marp --pdf --input-dir slides/ --output dist/",
     "build:pptx": "marp --pptx --input-dir slides/ --output dist/",
-    "watch": "marp --watch slides/"
+    "watch": "marp --watch slides/",
+    "lint:md": "npx markdownlint-cli2 'slides/**/*.md'"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.0.3"

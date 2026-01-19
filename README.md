@@ -1,6 +1,6 @@
-# codearts-tech-docs
+# codearts-tech-slides
 
-Lightning Talk スライドとテクニカルドキュメント用リポジトリ
+Lightning Talk スライド用リポジトリ
 
 ## セットアップ
 
@@ -14,7 +14,7 @@ bun install
 # ブラウザでプレビュー
 bun run preview
 
-# HTML出力
+# HTML出力（dist/にindex.htmlも生成）
 bun run build
 
 # PDF出力
@@ -22,14 +22,20 @@ bun run build:pdf
 
 # PPTX出力
 bun run build:pptx
+
+# Markdownのlintチェック
+bun run lint:md
 ```
 
 ## 構成
 
 ```
-slides/   # スライドファイル（.md）
-assets/   # 画像等のアセット
-dist/     # ビルド出力
+slides/     # スライドファイル（.md）
+themes/     # Marpテーマ（.css）
+templates/  # インデックスページテンプレート
+scripts/    # ビルドスクリプト
+assets/     # 画像等のアセット
+dist/       # ビルド出力
 ```
 
 ## VS Code
