@@ -31,9 +31,7 @@ jobs:
         run: bun run build
 
       - name: Copy static files to dist
-        run: |
-          cp -r assets dist/ 2>/dev/null || true
-          cp public/index.html dist/
+        run: cp -r assets dist/ 2>/dev/null || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
