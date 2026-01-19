@@ -27,9 +27,22 @@ bun run build:pptx
 bun run lint:md
 ```
 
+## テーマ
+
+- **slate** - ダークネイビー + シャンパンゴールド（デフォルト）
+- **plato** - ライト、テラコッタ + クリーム
+
+```yaml
+---
+marp: true
+theme: slate
+paginate: true
+---
+```
+
 ## 構成
 
-```
+```text
 slides/     # スライドファイル（.md）
 themes/     # Marpテーマ（.css）
 templates/  # インデックスページテンプレート

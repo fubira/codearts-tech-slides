@@ -6,7 +6,7 @@ paginate: true
 
 <!-- _class: titlepage -->
 
-# Claude Code チューンナップ入門
+# Claude Code 基本設定ガイド
 
 CLAUDE.md 事始め
 
