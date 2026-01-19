@@ -1,17 +1,20 @@
 /*
   Index page styles
-  カラーパレットは themes/plato.css の変数に合わせる
+  カラーパレットは themes/slate.css の変数に合わせる
 */
 
 :root {
-  /* themes/plato.css と同じ値 */
-  --plato-terracotta: #c2410c;
-  --plato-terracotta-light: #ea580c;
-  --plato-cream: #fef7ed;
-  --plato-cream-dark: #fef3e2;
-  --plato-charcoal: #292524;
-  --plato-stone: #57534e;
-  --plato-stone-light: #78716c;
+  /* themes/slate.css と同じ値 */
+  --slate-navy: #1a2744;
+  --slate-navy-light: #2a3a5c;
+  --slate-navy-deep: #0d1525;
+  --slate-champagne: #c9a961;
+  --slate-champagne-soft: #d4ba7a;
+  --slate-ivory: #faf9f7;
+  --slate-ivory-warm: #f5f3ef;
+  --slate-graphite: #2c3342;
+  --slate-silver: #6b7280;
+  --slate-silver-light: #9ca3af;
 }
 
 * {
@@ -21,10 +24,10 @@
 }
 
 body {
-  font-family: 'Noto Sans JP', system-ui, sans-serif;
-  background: linear-gradient(160deg, var(--plato-cream) 0%, var(--plato-cream-dark) 100%);
+  font-family: 'Murecho', 'Noto Sans JP', system-ui, sans-serif;
+  background: var(--slate-navy);
   min-height: 100vh;
-  color: var(--plato-charcoal);
+  color: var(--slate-ivory);
 }
 
 .container {
@@ -38,17 +41,17 @@ header {
 }
 
 h1 {
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: 'Murecho', system-ui, sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
-  color: var(--plato-charcoal);
-  border-bottom: 4px solid var(--plato-terracotta);
+  color: var(--slate-ivory);
+  border-bottom: 4px solid var(--slate-champagne);
   padding-bottom: 0.75rem;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  color: var(--plato-stone);
+  color: var(--slate-silver-light);
   font-size: 1rem;
 }
 
@@ -60,53 +63,60 @@ h1 {
 }
 
 .slide-card {
-  background: white;
+  background: var(--slate-navy-light);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(41, 37, 36, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
-  border: 1px solid rgba(41, 37, 36, 0.06);
+  border: 1px solid rgba(250, 249, 247, 0.08);
+  position: relative;
 }
 
 .slide-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(41, 37, 36, 0.12);
-  border-color: var(--plato-terracotta);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: var(--slate-champagne);
 }
 
 .slide-card a {
   text-decoration: none;
-  display: block;
+}
+
+.slide-card a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
 }
 
 .slide-title {
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: 'Murecho', system-ui, sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--plato-charcoal);
+  color: var(--slate-ivory);
   margin-bottom: 0.25rem;
 }
 
 .slide-card:hover .slide-title {
-  color: var(--plato-terracotta);
+  color: var(--slate-champagne);
 }
 
 .slide-description {
   font-size: 0.875rem;
-  color: var(--plato-stone-light);
+  color: var(--slate-silver-light);
 }
 
 footer {
   margin-top: 4rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(41, 37, 36, 0.1);
+  border-top: 1px solid rgba(250, 249, 247, 0.1);
   text-align: center;
-  color: var(--plato-stone-light);
+  color: var(--slate-silver);
   font-size: 0.875rem;
 }
 
 footer a {
-  color: var(--plato-terracotta);
+  color: var(--slate-champagne);
   text-decoration: none;
 }
 

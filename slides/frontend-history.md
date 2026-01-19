@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: plato
+theme: slate
 paginate: true
 ---
 
