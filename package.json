@@ -5,7 +5,7 @@
   "description": "Lightning Talk slides for tech presentations",
   "scripts": {
     "preview": "marp --preview slides/",
-    "build": "marp --input-dir slides/ --output dist/",
+    "build": "marp --input-dir slides/ --output dist/ && node scripts/generate-index.js",
     "build:pdf": "marp --pdf --input-dir slides/ --output dist/",
     "build:pptx": "marp --pptx --input-dir slides/ --output dist/",
     "watch": "marp --watch slides/"
