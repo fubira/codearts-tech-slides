@@ -1,7 +1,6 @@
 {
   "markdown.marp.enableHtml": true,
   "markdown.marp.themes": [
-    "./themes/plato.css",
-    "./themes/beam.css"
+    "./themes/plato.css"
   ]
 }
