@@ -2,33 +2,37 @@
 
 /*
   Slate Theme for Marp
-  Plato's editorial structure with cool slate blue color palette
+  Luxury Editorial - Deep navy with champagne gold accents
+  Refined typography and elegant spatial composition
 */
 
 @import "default";
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Murecho:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 /* ==================== DESIGN TOKENS ==================== */
 
 :root {
-  /* Primary palette - Muted Slate Blue */
-  --plato-terracotta: #5a7ba8;
-  --plato-terracotta-light: #7a9bc8;
-  --plato-amber: #4a6b98;
-  --plato-cream: #f5f7fa;
-  --plato-cream-dark: #e8ecf2;
-  --plato-charcoal: #0f1419;
-  --plato-stone: #374151;
-  --plato-stone-light: #4b5563;
+  /* Primary palette - Deep Navy & Champagne */
+  --slate-navy: #1a2744;
+  --slate-navy-light: #2a3a5c;
+  --slate-navy-deep: #0d1525;
+  --slate-champagne: #c9a961;
+  --slate-champagne-soft: #d4ba7a;
+  --slate-champagne-pale: rgba(201, 169, 97, 0.15);
+  --slate-ivory: #faf9f7;
+  --slate-ivory-warm: #f5f3ef;
+  --slate-graphite: #2c3342;
+  --slate-silver: #6b7280;
+  --slate-silver-light: #9ca3af;
 
   /* Accent colors */
-  --plato-highlight: #dce4f0;
-  --plato-highlight-soft: rgba(90, 123, 168, 0.12);
-  --plato-border-subtle: rgba(90, 123, 168, 0.25);
+  --slate-highlight: rgba(201, 169, 97, 0.12);
+  --slate-border-subtle: rgba(201, 169, 97, 0.35);
+  --slate-border-fine: rgba(26, 39, 68, 0.12);
 
   /* Typography */
-  --font-display: 'Outfit', system-ui, sans-serif;
-  --font-body: 'Noto Sans JP', system-ui, sans-serif;
+  --font-display: 'Murecho', system-ui, sans-serif;
+  --font-body: 'Murecho', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
   /* Spacing scale */
@@ -42,11 +46,11 @@
   --space-3xl: 4rem;
 
   /* Borders & Shadows */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.08);
-  --shadow-medium: 0 4px 12px rgba(15, 23, 42, 0.12);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --shadow-elegant: 0 2px 8px rgba(13, 21, 37, 0.08), 0 1px 2px rgba(13, 21, 37, 0.04);
+  --shadow-lifted: 0 8px 24px rgba(13, 21, 37, 0.12), 0 2px 6px rgba(13, 21, 37, 0.06);
 }
 
 /* ==================== BASE SECTION ==================== */
@@ -55,49 +59,49 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: var(--plato-cream);
+  background: var(--slate-navy);
   font-family: var(--font-body);
   font-size: 26px;
   font-weight: 400;
-  color: var(--plato-charcoal);
-  padding: 88px var(--space-2xl) var(--space-xl);
-  line-height: 1.65;
-  letter-spacing: -0.01em;
+  color: rgba(250, 249, 247, 0.9);
+  padding: 72px var(--space-3xl) var(--space-xl);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
+
 
 /* ==================== HEADINGS ==================== */
 
 h1 {
   font-family: var(--font-display);
-  font-size: 1.9em;
+  font-size: 2.1em;
   font-weight: 600;
-  color: var(--plato-charcoal);
-  border-bottom: 3px solid var(--plato-terracotta);
-  padding-bottom: var(--space-xs);
+  color: var(--slate-ivory);
   margin-bottom: var(--space-lg);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
 }
 
 h2 {
   font-family: var(--font-display);
-  font-size: 1.4em;
-  font-weight: 600;
-  color: var(--plato-charcoal);
-  margin-top: var(--space-lg);
+  font-size: 1.5em;
+  font-weight: 500;
+  color: var(--slate-ivory-warm);
+  margin-top: var(--space-xl);
   margin-bottom: var(--space-md);
-  letter-spacing: -0.015em;
+  letter-spacing: 0.015em;
 }
 
 h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--plato-stone);
+  font-weight: 500;
+  color: var(--slate-silver-light);
   margin-top: var(--space-md);
   margin-bottom: var(--space-sm);
+  letter-spacing: 0.01em;
 }
 
-h3 { font-size: 1.2em; }
+h3 { font-size: 1.25em; }
 h4 { font-size: 1.1em; }
 
 /* ==================== TEXT ELEMENTS ==================== */
@@ -105,30 +109,31 @@ h4 { font-size: 1.1em; }
 section p {
   margin-top: var(--space-sm);
   margin-bottom: var(--space-sm);
-  line-height: 1.7;
-  font-size: 28px;
+  line-height: 1.75;
+  font-size: 26px;
+  font-weight: 400;
 }
 
 section li {
   margin-top: var(--space-xs);
   margin-bottom: var(--space-xs);
-  line-height: 1.6;
-  font-size: 26px;
-  color: var(--plato-charcoal);
+  line-height: 1.65;
+  font-size: 24px;
+  color: rgba(250, 249, 247, 0.9);
 }
 
 li::marker {
-  color: var(--plato-terracotta);
+  color: var(--slate-champagne);
   font-weight: 600;
 }
 
-/* Emphasis styles */
+/* Emphasis styles - refined highlight */
 section em {
-  color: var(--plato-charcoal);
+  color: var(--slate-ivory);
   background: linear-gradient(
     180deg,
-    transparent 65%,
-    var(--plato-highlight-soft) 65%
+    transparent 60%,
+    rgba(201, 169, 97, 0.25) 60%
   );
   font-style: normal;
   font-weight: 500;
@@ -136,67 +141,68 @@ section em {
 }
 
 section strong {
-  color: var(--plato-terracotta);
+  color: var(--slate-champagne-soft);
   font-weight: 600;
 }
 
 /* Links */
 a {
-  color: var(--plato-terracotta);
-  text-decoration: underline;
-  text-decoration-color: var(--plato-border-subtle);
-  text-underline-offset: 3px;
+  color: var(--slate-champagne);
+  text-decoration: none;
+  border-bottom: 1px solid var(--slate-border-subtle);
   transition: all 0.2s ease;
 }
 
 a:hover {
-  text-decoration-color: var(--plato-terracotta);
+  color: var(--slate-champagne-soft);
+  border-bottom-color: var(--slate-champagne);
 }
 
 /* ==================== CODE ==================== */
 
 code {
   font-family: var(--font-mono);
-  font-size: 0.85em;
-  background: rgba(15, 23, 42, 0.06);
-  color: var(--plato-charcoal);
-  padding: 0.15em 0.45em;
+  font-size: 0.82em;
+  background: rgba(250, 249, 247, 0.1);
+  color: var(--slate-ivory);
+  padding: 0.2em 0.5em;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(250, 249, 247, 0.15);
 }
 
 pre {
-  background: var(--plato-charcoal);
+  background: var(--slate-navy-deep);
   border-radius: var(--radius-md);
-  padding: var(--space-sm) var(--space-md);
-  margin: var(--space-sm) 0;
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-md) 0;
   overflow-x: auto;
-  box-shadow: var(--shadow-medium);
-  max-height: 280px;
+  box-shadow: var(--shadow-lifted);
+  max-height: 300px;
 }
 
 pre code {
   background: none;
   border: none;
-  color: var(--plato-cream);
+  color: var(--slate-ivory);
   padding: 0;
-  font-size: 0.7em;
-  line-height: 1.5;
+  font-size: 0.72em;
+  line-height: 1.6;
 }
 
 /* ==================== BLOCKQUOTE ==================== */
 
 section blockquote {
-  border-left: 4px solid var(--plato-terracotta);
+  border-left: 3px solid var(--slate-champagne);
   background: linear-gradient(
     90deg,
-    rgba(90, 123, 168, 0.08) 0%,
+    rgba(201, 169, 97, 0.12) 0%,
     transparent 100%
   );
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-md) var(--space-xl);
   margin: var(--space-lg) 0;
-  font-style: italic;
-  color: var(--plato-stone);
+  font-style: normal;
+  font-size: 1em;
+  color: var(--slate-silver-light);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
@@ -207,7 +213,7 @@ section blockquote p {
 }
 
 section blockquote strong {
-  color: var(--plato-terracotta);
+  color: var(--slate-champagne-soft);
   font-weight: 600;
 }
 
@@ -215,32 +221,35 @@ section blockquote strong {
 
 section table {
   width: auto;
-  margin: var(--space-lg) auto;
+  margin: var(--space-xl) auto;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.85em;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-elegant);
 }
 
 section table th {
-  background: var(--plato-charcoal);
-  color: var(--plato-cream);
-  font-weight: 600;
-  padding: var(--space-sm) var(--space-md);
+  background: var(--slate-navy);
+  color: var(--slate-ivory);
+  font-weight: 500;
+  padding: var(--space-sm) var(--space-lg);
   text-align: left;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.85em;
 }
 
 section table td {
-  padding: var(--space-sm) var(--space-md);
-  border-bottom: 1px solid var(--plato-border-subtle);
-  background: var(--plato-cream);
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: 1px solid rgba(250, 249, 247, 0.1);
+  background: var(--slate-navy-light);
+  color: var(--slate-ivory-warm);
 }
 
 section table tr:nth-child(even) td {
-  background: var(--plato-cream-dark);
+  background: rgba(42, 58, 92, 0.7);
 }
 
 section table tr:last-child td {
@@ -251,20 +260,20 @@ section table tr:last-child td {
 
 img {
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-elegant);
 }
 
 img[alt~="center"] {
   display: block;
-  margin: var(--space-lg) auto;
+  margin: var(--space-xl) auto;
 }
 
 section figcaption {
-  font-size: 0.75em;
-  color: var(--plato-stone-light);
+  font-size: 0.8em;
+  color: var(--slate-silver-light);
   text-align: center;
   padding-top: var(--space-sm);
-  font-style: italic;
+  letter-spacing: 0.02em;
 }
 
 /* ==================== PAGE NUMBER ==================== */
@@ -272,13 +281,13 @@ section figcaption {
 section::after {
   font-family: var(--font-mono);
   font-size: 0.5em;
-  font-weight: 500;
-  color: var(--plato-stone-light);
+  font-weight: 400;
+  color: var(--slate-silver);
   content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
   position: absolute;
   bottom: var(--space-md);
   right: var(--space-xl);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 /* ==================== COLUMNS ==================== */
@@ -286,23 +295,23 @@ section::after {
 .columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-lg);
+  gap: var(--space-xl);
 }
 
 .columns p {
-  font-size: 24px;
-  line-height: 1.6;
+  font-size: 22px;
+  line-height: 1.65;
 }
 
 .columns ol, .columns ul {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.7;
 }
 
 .columns-center {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-lg);
+  gap: var(--space-xl);
   justify-items: center;
   align-items: center;
 }
@@ -310,13 +319,13 @@ section::after {
 .columns3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .columns3-center {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-md);
+  gap: var(--space-lg);
   justify-items: center;
   align-items: center;
 }
@@ -324,43 +333,45 @@ section::after {
 /* ==================== TITLEPAGE ==================== */
 
 section.titlepage {
-  background: linear-gradient(
-    160deg,
-    var(--plato-cream) 0%,
-    var(--plato-cream-dark) 100%
-  );
+  background: var(--slate-navy);
   justify-content: center;
   padding: var(--space-3xl);
+  position: relative;
 }
 
 section.titlepage h1 {
-  font-size: 2.4em;
-  font-weight: 700;
-  color: var(--plato-charcoal);
-  border-bottom: 4px solid var(--plato-terracotta);
-  padding-bottom: var(--space-md);
+  font-size: 2.6em;
+  font-weight: 600;
+  color: var(--slate-ivory);
   margin-bottom: var(--space-lg);
-  line-height: 1.15;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-align: left;
+  border-bottom: 4px solid var(--slate-champagne);
+  padding-bottom: var(--space-md);
 }
 
 section.titlepage h2 {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 400;
-  color: var(--plato-stone);
-  margin-top: 0;
+  color: var(--slate-silver-light);
+  margin-top: var(--space-md);
   margin-bottom: var(--space-2xl);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
+  text-align: center;
 }
 
 section.titlepage h3,
 section.titlepage h4,
 section.titlepage h5 {
   font-family: var(--font-body);
-  font-weight: 500;
-  color: var(--plato-stone);
-  text-align: right;
-  line-height: 1.4;
+  font-weight: 400;
+  color: var(--slate-silver-light);
+  text-align: center;
+  line-height: 1.5;
   margin: var(--space-xs) 0;
+  font-size: 0.9em;
+  letter-spacing: 0.02em;
 }
 
 section.titlepage footer,
@@ -371,12 +382,9 @@ section.titlepage::after {
 
 /* ==================== TRANSITION ==================== */
 
+/* デフォルトのtransition */
 section.transition {
-  background: linear-gradient(
-    135deg,
-    #1e293b 0%,
-    #334155 100%
-  );
+  background: linear-gradient(135deg, var(--slate-navy-deep) 0%, #4a7ab8 100%);
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -384,17 +392,16 @@ section.transition {
 
 section.transition h1,
 section.transition h2 {
-  font-family: var(--font-display);
-  color: var(--plato-cream);
-  font-size: 2.2em;
+  color: var(--slate-ivory);
+  font-size: 2.4em;
   font-weight: 600;
-  border: none;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.03em;
 }
 
 section.transition p {
-  color: rgba(248, 250, 252, 0.85);
-  font-size: 1.2em;
+  color: rgba(250, 249, 247, 0.85);
+  font-size: 1.1em;
+  letter-spacing: 0.02em;
 }
 
 section.transition footer,
@@ -406,38 +413,28 @@ section.transition::after {
 /* ==================== CITE ==================== */
 
 section.cite {
-  background: linear-gradient(
-    145deg,
-    var(--plato-cream-dark) 0%,
-    var(--plato-cream) 100%
-  );
+  background: var(--slate-navy-deep);
   justify-content: center;
   align-items: center;
   padding: var(--space-3xl);
+  position: relative;
 }
 
 section.cite p {
-  font-family: var(--font-display);
-  font-size: 1.6em;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--plato-charcoal);
+  font-size: 1.5em;
+  font-weight: 500;
+  color: var(--slate-ivory);
   text-align: center;
   line-height: 1.5;
-  max-width: 85%;
+  max-width: 80%;
 }
 
 section.cite p::before {
-  content: '"';
-  font-size: 2em;
-  color: var(--plato-terracotta);
-  opacity: 0.4;
-  display: block;
-  margin-bottom: -0.5em;
+  display: none;
 }
 
 section.cite strong {
-  color: var(--plato-terracotta);
+  color: var(--slate-champagne);
 }
 
 section.cite footer,
@@ -449,29 +446,28 @@ section.cite::after {
 /* ==================== BIBLIO ==================== */
 
 section.biblio {
-  background: var(--plato-charcoal);
-  color: var(--plato-cream);
+  background: var(--slate-navy-deep);
+  color: var(--slate-ivory);
 }
 
 section.biblio h1 {
-  color: var(--plato-cream);
-  border-bottom-color: var(--plato-terracotta);
-  font-size: 1.5em;
+  color: var(--slate-ivory);
+  font-size: 1.4em;
 }
 
 section.biblio p {
   font-size: 0.75em;
-  color: rgba(248, 250, 252, 0.85);
-  line-height: 1.6;
+  color: var(--slate-silver-light);
+  line-height: 1.7;
 }
 
 section.biblio li {
-  color: rgba(248, 250, 252, 0.85);
+  color: var(--slate-silver-light);
   font-size: 0.8em;
 }
 
 section.biblio strong {
-  color: var(--plato-terracotta-light);
+  color: var(--slate-champagne-soft);
 }
 
 section.biblio footer,
@@ -480,62 +476,71 @@ section.biblio::after {
   display: none;
 }
 
-/* ==================== DARK VARIANT ==================== */
+/* ==================== LIGHT VARIANT ==================== */
 
-section.dark {
+section.light {
+  background: var(--slate-ivory);
+  color: var(--slate-graphite);
+}
+
+section.light h1 {
+  color: var(--slate-navy);
+}
+
+section.light h2, section.light h3, section.light h4 {
+  color: var(--slate-navy-light);
+}
+
+section.light p, section.light li {
+  color: var(--slate-graphite);
+}
+
+section.light em {
+  color: var(--slate-navy);
   background: linear-gradient(
     180deg,
-    var(--plato-charcoal) 0%,
-    #020617 100%
-  );
-  color: var(--plato-cream);
-}
-
-section.dark h1 {
-  color: var(--plato-cream);
-  border-bottom-color: var(--plato-terracotta);
-}
-
-section.dark h2, section.dark h3, section.dark h4 {
-  color: rgba(248, 250, 252, 0.9);
-}
-
-section.dark p, section.dark li {
-  color: rgba(248, 250, 252, 0.85);
-}
-
-section.dark em {
-  color: var(--plato-cream);
-  background: linear-gradient(
-    180deg,
-    transparent 65%,
-    rgba(90, 123, 168, 0.35) 65%
+    transparent 60%,
+    var(--slate-champagne-pale) 60%
   );
 }
 
-section.dark code {
-  background: rgba(248, 250, 252, 0.1);
-  color: var(--plato-cream);
-  border-color: rgba(248, 250, 252, 0.15);
+section.light strong {
+  color: var(--slate-navy);
 }
 
-section.dark blockquote {
+section.light code {
+  background: var(--slate-ivory-warm);
+  color: var(--slate-navy);
+  border-color: var(--slate-border-fine);
+}
+
+section.light blockquote {
+  color: var(--slate-navy-light);
   background: linear-gradient(
     90deg,
-    rgba(90, 123, 168, 0.2) 0%,
+    var(--slate-champagne-pale) 0%,
     transparent 100%
   );
 }
 
-section.dark::after {
-  color: rgba(248, 250, 252, 0.5);
+section.light table td {
+  background: var(--slate-ivory);
+  color: var(--slate-graphite);
+}
+
+section.light table tr:nth-child(even) td {
+  background: var(--slate-ivory-warm);
+}
+
+section.light::after {
+  color: var(--slate-silver-light);
 }
 
 /* ==================== COMPACT ==================== */
 
 section.compact p {
   font-size: 22px;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 section.compact li {
@@ -545,8 +550,8 @@ section.compact li {
 
 /* ==================== POSITIONING UTILITIES ==================== */
 
-.topleft { position: absolute; top: 88px; left: var(--space-xl); }
-.topright { position: absolute; top: 88px; right: var(--space-xl); }
+.topleft { position: absolute; top: 72px; left: var(--space-xl); }
+.topright { position: absolute; top: 72px; right: var(--space-xl); }
 .bottomleft { position: absolute; bottom: var(--space-xl); left: var(--space-xl); }
 .bottomright { position: absolute; bottom: var(--space-xl); right: var(--space-xl); }
 .centered {
@@ -561,12 +566,12 @@ section.compact li {
 
 /* ==================== TEXT UTILITIES ==================== */
 
-.text-blue { color: var(--plato-terracotta); }
-.text-accent { color: var(--plato-amber); }
-.text-stone { color: var(--plato-stone); }
+.text-gold { color: var(--slate-champagne); }
+.text-navy { color: var(--slate-navy); }
+.text-silver { color: var(--slate-silver); }
 .text-small { font-size: 0.8em; }
 .text-large { font-size: 1.2em; }
-.text-muted { color: var(--plato-stone-light); }
+.text-muted { color: var(--slate-silver-light); }
 
 /* ==================== SPACING UTILITIES ==================== */
 
@@ -579,38 +584,37 @@ section.compact li {
 
 /* ==================== SYNTAX HIGHLIGHTING ==================== */
 
-/* Override default highlight.js colors for better readability */
 pre code .hljs-tag,
 pre code .hljs-name {
-  color: #f97316;  /* Orange for tags */
+  color: #e5a54b;
 }
 
 pre code .hljs-attr {
-  color: #a5d6ff;  /* Light blue for attributes */
+  color: #9ec5e8;
 }
 
 pre code .hljs-string {
-  color: #7ee787;  /* Green for strings */
+  color: #a8d4a8;
 }
 
 pre code .hljs-comment {
-  color: #8b949e;  /* Gray for comments */
+  color: #6b7a8c;
 }
 
 pre code .hljs-keyword {
-  color: #ff7b72;  /* Red for keywords */
+  color: #d4a5c9;
 }
 
 pre code .hljs-function,
 pre code .hljs-title {
-  color: #d2a8ff;  /* Purple for functions */
+  color: #c9a961;
 }
 
 pre code .hljs-variable,
 pre code .hljs-property {
-  color: #ffa657;  /* Orange for variables */
+  color: #e8c080;
 }
 
 pre code .hljs-number {
-  color: #79c0ff;  /* Blue for numbers */
+  color: #8fc8e8;
 }
