@@ -1,0 +1,616 @@
+/* @theme slate */
+
+/*
+  Slate Theme for Marp
+  Plato's editorial structure with cool slate blue color palette
+*/
+
+@import "default";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ==================== DESIGN TOKENS ==================== */
+
+:root {
+  /* Primary palette - Muted Slate Blue */
+  --plato-terracotta: #5a7ba8;
+  --plato-terracotta-light: #7a9bc8;
+  --plato-amber: #4a6b98;
+  --plato-cream: #f5f7fa;
+  --plato-cream-dark: #e8ecf2;
+  --plato-charcoal: #0f1419;
+  --plato-stone: #374151;
+  --plato-stone-light: #4b5563;
+
+  /* Accent colors */
+  --plato-highlight: #dce4f0;
+  --plato-highlight-soft: rgba(90, 123, 168, 0.12);
+  --plato-border-subtle: rgba(90, 123, 168, 0.25);
+
+  /* Typography */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Noto Sans JP', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Spacing scale */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Borders & Shadows */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-medium: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+/* ==================== BASE SECTION ==================== */
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--plato-cream);
+  font-family: var(--font-body);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--plato-charcoal);
+  padding: 88px var(--space-2xl) var(--space-xl);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+/* ==================== HEADINGS ==================== */
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 1.9em;
+  font-weight: 600;
+  color: var(--plato-charcoal);
+  border-bottom: 3px solid var(--plato-terracotta);
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--plato-charcoal);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.015em;
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--plato-stone);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.1em; }
+
+/* ==================== TEXT ELEMENTS ==================== */
+
+section p {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  line-height: 1.7;
+  font-size: 28px;
+}
+
+section li {
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  line-height: 1.6;
+  font-size: 26px;
+  color: var(--plato-charcoal);
+}
+
+li::marker {
+  color: var(--plato-terracotta);
+  font-weight: 600;
+}
+
+/* Emphasis styles */
+section em {
+  color: var(--plato-charcoal);
+  background: linear-gradient(
+    180deg,
+    transparent 65%,
+    var(--plato-highlight-soft) 65%
+  );
+  font-style: normal;
+  font-weight: 500;
+  padding: 0 var(--space-2xs);
+}
+
+section strong {
+  color: var(--plato-terracotta);
+  font-weight: 600;
+}
+
+/* Links */
+a {
+  color: var(--plato-terracotta);
+  text-decoration: underline;
+  text-decoration-color: var(--plato-border-subtle);
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-decoration-color: var(--plato-terracotta);
+}
+
+/* ==================== CODE ==================== */
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--plato-charcoal);
+  padding: 0.15em 0.45em;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+pre {
+  background: var(--plato-charcoal);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-sm) 0;
+  overflow-x: auto;
+  box-shadow: var(--shadow-medium);
+  max-height: 280px;
+}
+
+pre code {
+  background: none;
+  border: none;
+  color: var(--plato-cream);
+  padding: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+
+/* ==================== BLOCKQUOTE ==================== */
+
+section blockquote {
+  border-left: 4px solid var(--plato-terracotta);
+  background: linear-gradient(
+    90deg,
+    rgba(90, 123, 168, 0.08) 0%,
+    transparent 100%
+  );
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
+  font-style: italic;
+  color: var(--plato-stone);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+section blockquote p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+section blockquote strong {
+  color: var(--plato-terracotta);
+  font-weight: 600;
+}
+
+/* ==================== TABLES ==================== */
+
+section table {
+  width: auto;
+  margin: var(--space-lg) auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.85em;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+}
+
+section table th {
+  background: var(--plato-charcoal);
+  color: var(--plato-cream);
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+
+section table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--plato-border-subtle);
+  background: var(--plato-cream);
+}
+
+section table tr:nth-child(even) td {
+  background: var(--plato-cream-dark);
+}
+
+section table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==================== IMAGES ==================== */
+
+img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-medium);
+}
+
+img[alt~="center"] {
+  display: block;
+  margin: var(--space-lg) auto;
+}
+
+section figcaption {
+  font-size: 0.75em;
+  color: var(--plato-stone-light);
+  text-align: center;
+  padding-top: var(--space-sm);
+  font-style: italic;
+}
+
+/* ==================== PAGE NUMBER ==================== */
+
+section::after {
+  font-family: var(--font-mono);
+  font-size: 0.5em;
+  font-weight: 500;
+  color: var(--plato-stone-light);
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  position: absolute;
+  bottom: var(--space-md);
+  right: var(--space-xl);
+  letter-spacing: 0.05em;
+}
+
+/* ==================== COLUMNS ==================== */
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.columns p {
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+.columns ol, .columns ul {
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.columns-center {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+  justify-items: center;
+  align-items: center;
+}
+
+.columns3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.columns3-center {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  justify-items: center;
+  align-items: center;
+}
+
+/* ==================== TITLEPAGE ==================== */
+
+section.titlepage {
+  background: linear-gradient(
+    160deg,
+    var(--plato-cream) 0%,
+    var(--plato-cream-dark) 100%
+  );
+  justify-content: center;
+  padding: var(--space-3xl);
+}
+
+section.titlepage h1 {
+  font-size: 2.4em;
+  font-weight: 700;
+  color: var(--plato-charcoal);
+  border-bottom: 4px solid var(--plato-terracotta);
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
+  line-height: 1.15;
+}
+
+section.titlepage h2 {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: var(--plato-stone);
+  margin-top: 0;
+  margin-bottom: var(--space-2xl);
+  letter-spacing: 0.01em;
+}
+
+section.titlepage h3,
+section.titlepage h4,
+section.titlepage h5 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--plato-stone);
+  text-align: right;
+  line-height: 1.4;
+  margin: var(--space-xs) 0;
+}
+
+section.titlepage footer,
+section.titlepage header,
+section.titlepage::after {
+  display: none;
+}
+
+/* ==================== TRANSITION ==================== */
+
+section.transition {
+  background: linear-gradient(
+    135deg,
+    #1e293b 0%,
+    #334155 100%
+  );
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.transition h1,
+section.transition h2 {
+  font-family: var(--font-display);
+  color: var(--plato-cream);
+  font-size: 2.2em;
+  font-weight: 600;
+  border: none;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+section.transition p {
+  color: rgba(248, 250, 252, 0.85);
+  font-size: 1.2em;
+}
+
+section.transition footer,
+section.transition header,
+section.transition::after {
+  display: none;
+}
+
+/* ==================== CITE ==================== */
+
+section.cite {
+  background: linear-gradient(
+    145deg,
+    var(--plato-cream-dark) 0%,
+    var(--plato-cream) 100%
+  );
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-3xl);
+}
+
+section.cite p {
+  font-family: var(--font-display);
+  font-size: 1.6em;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--plato-charcoal);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 85%;
+}
+
+section.cite p::before {
+  content: '"';
+  font-size: 2em;
+  color: var(--plato-terracotta);
+  opacity: 0.4;
+  display: block;
+  margin-bottom: -0.5em;
+}
+
+section.cite strong {
+  color: var(--plato-terracotta);
+}
+
+section.cite footer,
+section.cite header,
+section.cite::after {
+  display: none;
+}
+
+/* ==================== BIBLIO ==================== */
+
+section.biblio {
+  background: var(--plato-charcoal);
+  color: var(--plato-cream);
+}
+
+section.biblio h1 {
+  color: var(--plato-cream);
+  border-bottom-color: var(--plato-terracotta);
+  font-size: 1.5em;
+}
+
+section.biblio p {
+  font-size: 0.75em;
+  color: rgba(248, 250, 252, 0.85);
+  line-height: 1.6;
+}
+
+section.biblio li {
+  color: rgba(248, 250, 252, 0.85);
+  font-size: 0.8em;
+}
+
+section.biblio strong {
+  color: var(--plato-terracotta-light);
+}
+
+section.biblio footer,
+section.biblio header,
+section.biblio::after {
+  display: none;
+}
+
+/* ==================== DARK VARIANT ==================== */
+
+section.dark {
+  background: linear-gradient(
+    180deg,
+    var(--plato-charcoal) 0%,
+    #020617 100%
+  );
+  color: var(--plato-cream);
+}
+
+section.dark h1 {
+  color: var(--plato-cream);
+  border-bottom-color: var(--plato-terracotta);
+}
+
+section.dark h2, section.dark h3, section.dark h4 {
+  color: rgba(248, 250, 252, 0.9);
+}
+
+section.dark p, section.dark li {
+  color: rgba(248, 250, 252, 0.85);
+}
+
+section.dark em {
+  color: var(--plato-cream);
+  background: linear-gradient(
+    180deg,
+    transparent 65%,
+    rgba(90, 123, 168, 0.35) 65%
+  );
+}
+
+section.dark code {
+  background: rgba(248, 250, 252, 0.1);
+  color: var(--plato-cream);
+  border-color: rgba(248, 250, 252, 0.15);
+}
+
+section.dark blockquote {
+  background: linear-gradient(
+    90deg,
+    rgba(90, 123, 168, 0.2) 0%,
+    transparent 100%
+  );
+}
+
+section.dark::after {
+  color: rgba(248, 250, 252, 0.5);
+}
+
+/* ==================== COMPACT ==================== */
+
+section.compact p {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+section.compact li {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* ==================== POSITIONING UTILITIES ==================== */
+
+.topleft { position: absolute; top: 88px; left: var(--space-xl); }
+.topright { position: absolute; top: 88px; right: var(--space-xl); }
+.bottomleft { position: absolute; bottom: var(--space-xl); left: var(--space-xl); }
+.bottomright { position: absolute; bottom: var(--space-xl); right: var(--space-xl); }
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.center { text-align: center; }
+.right { text-align: right; }
+
+/* ==================== TEXT UTILITIES ==================== */
+
+.text-blue { color: var(--plato-terracotta); }
+.text-accent { color: var(--plato-amber); }
+.text-stone { color: var(--plato-stone); }
+.text-small { font-size: 0.8em; }
+.text-large { font-size: 1.2em; }
+.text-muted { color: var(--plato-stone-light); }
+
+/* ==================== SPACING UTILITIES ==================== */
+
+.mt-0 { margin-top: 0; }
+.mb-0 { margin-bottom: 0; }
+.mt-md { margin-top: var(--space-md); }
+.mb-md { margin-bottom: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mb-lg { margin-bottom: var(--space-lg); }
+
+/* ==================== SYNTAX HIGHLIGHTING ==================== */
+
+/* Override default highlight.js colors for better readability */
+pre code .hljs-tag,
+pre code .hljs-name {
+  color: #f97316;  /* Orange for tags */
+}
+
+pre code .hljs-attr {
+  color: #a5d6ff;  /* Light blue for attributes */
+}
+
+pre code .hljs-string {
+  color: #7ee787;  /* Green for strings */
+}
+
+pre code .hljs-comment {
+  color: #8b949e;  /* Gray for comments */
+}
+
+pre code .hljs-keyword {
+  color: #ff7b72;  /* Red for keywords */
+}
+
+pre code .hljs-function,
+pre code .hljs-title {
+  color: #d2a8ff;  /* Purple for functions */
+}
+
+pre code .hljs-variable,
+pre code .hljs-property {
+  color: #ffa657;  /* Orange for variables */
+}
+
+pre code .hljs-number {
+  color: #79c0ff;  /* Blue for numbers */
+}
